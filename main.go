@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"time"
 
 	"github.com/p4gefau1t/trojan-go/common"
 	"github.com/p4gefau1t/trojan-go/log"
@@ -21,6 +22,7 @@ func main() {
 		http.ListenAndServe(":80", nil)
 	}()
 
+	time.Sleep(time.Second)
 	for {
 		h, err := common.PopOptionHandler()
 		if err != nil {
